@@ -32,11 +32,12 @@ public class EmpleadoNormal {
 
     public double calcularPago() {
         if (horasTrabajadas < 160) {
-            return ((salarioBase * horasTrabajadas) - (salarioBase * 0.35));
+            return ((salarioBase * horasTrabajadas) - (salarioBase * 0.035));
         }
-        return ((salarioBase * 160) - (salarioBase * 0.35));
+        return ((salarioBase * 160) - (salarioBase * 0.035));
     }
     
+    @Override
     public String toString(){
         return "Código: "+codigo
                 +"\nNombre: "+nombre

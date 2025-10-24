@@ -58,7 +58,7 @@ public class ventanaGenReporte {
         });
         screen.setVisible(true);
     }
-
+    //Mostrar los Datos
     private void mostrarEmpleados() {
         StringBuilder sb=new StringBuilder();
         sb.append("----Empleados Registrados----\n\n");
