@@ -4,6 +4,9 @@
  */
 package labsemana2;
 
+import java.awt.event.ActionEvent;
+import static labsemana2.Empresa.listaEmpleados;
+
 /**
  *
  * @author David
@@ -15,6 +18,6 @@ public class LabSemana2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    }
-    
+              ventanaGenReporte ventana= new ventanaGenReporte(listaEmpleados);
+    } 
 }
