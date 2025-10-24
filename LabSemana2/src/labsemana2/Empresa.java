@@ -5,7 +5,10 @@
 package labsemana2;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -33,7 +36,66 @@ public class Empresa {
         tituloPrincipal.setFont(new Font("Serif", Font.BOLD, 30));
         
         
+        JButton btRegistrar = new JButton("Registrar Empleados");
+        btRegistrar.setBounds(200, 180, 200, 50);
         
+        btRegistrar.addActionListener(new ActionListener(){
+          @Override 
+          public void actionPerformed(ActionEvent e){
+              screen.dispose();
+              ventanaRegistrarEmp ventana = new ventanaRegistrarEmp(listaEmpleados);
+             
+          }
+                    
+        });
+        
+        
+        
+        JButton btBuscarEmp = new JButton("Buscar Empleado");
+        btBuscarEmp.setBounds(200, 280, 200, 50);
+        
+        btBuscarEmp.addActionListener(new ActionListener(){
+          @Override 
+          public void actionPerformed(ActionEvent e){
+              screen.dispose();
+              ventanaBuscarEmp ventana = new ventanaBuscarEmp(listaEmpleados);
+              
+             
+          }
+                    
+        });
+        
+        
+        JButton btGenReporte = new JButton("Generar Reporte");
+        btGenReporte.setBounds(200, 380, 200, 50);
+        
+        btGenReporte.addActionListener(new ActionListener(){
+          @Override 
+          public void actionPerformed(ActionEvent e){
+              
+          }
+                    
+        });
+        
+        
+        
+        JButton btSalir = new JButton("Salir");
+        btSalir.setBounds(200, 480, 200, 50);
+        
+        btGenReporte.addActionListener(new ActionListener(){
+          @Override 
+          public void actionPerformed(ActionEvent e){
+              screen.dispose();
+          }
+                    
+        });
+        
+        
+        
+        screen.add(btSalir);
+        screen.add(btRegistrar);
+        screen.add(btBuscarEmp);
+        screen.add(btGenReporte);
         screen.add(tituloPrincipal);
         screen.setVisible(true);
     }
