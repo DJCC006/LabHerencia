@@ -14,7 +14,8 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JTextArea;ja
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 
 /**
  *
@@ -38,15 +39,35 @@ public class ventanaGenReporte {
         JLabel tituloPrincipal = new JLabel("Lista de Reportes Empleados");
         tituloPrincipal.setBounds(150, 50, 800, 85);
         tituloPrincipal.setFont(new Font("Serif", Font.BOLD, 30));
-        
-        areaTexto=new JTextArea();
+
+        areaTexto = new JTextArea();
         areaTexto.setEditable(false);
         areaTexto.setFont(new Font("Serif", Font.BOLD, 30));
-        add(new JScrollpane(areaTexto),BorderLayout.Center);
         
-        JButton btMostrar=new JButton("Mostrar Empleados");
-        
+        JScrollPane scroll=new JScrollPane(areaTexto);
+        scroll.setBounds(50,80,700,400);
+        screen.add(scroll);
 
+        JButton btMostrar = new JButton("Mostrar Empleados");
+        btMostrar.setBounds(150,390, 200, 50);
+        screen.add(btMostrar, BorderLayout.SOUTH);
+        btMostrar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+             mostrarEmpleados();
+            }
+        });
+        screen.setVisible(true);
     }
 
+    private void mostrarEmpleados() {
+        StringBuilder sb=new StringBuilder();
+        sb.append("----Empleados Registrados----\n\n");
+        for(EmpleadoNormal emp:listaEmpleados){
+            sb.append(emp.toString()).append("\n");
+        }
+        if(listaEmpleados.isEmpty()){
+            sb.append("No hay empleados registrados.\n");
+        }
+        areaTexto.setText(sb.toString());
+    }
 }
