@@ -9,8 +9,8 @@ package labsemana2;
  * @author Nathan
  */
 public class Ventas extends EmpleadoNormal{
- private double[]VentasAlMes;
- private double TarifaComision;
+ private  double[]VentasAlMes;
+ private  double TarifaComision;
  
  
  public Ventas(int codigo, String nombre, double TarifaComision ){
